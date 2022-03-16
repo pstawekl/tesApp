@@ -1,0 +1,163 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.site{
+  user-select: none;
+}
+
+.banner{
+  font-family: 'Roboto'; 
+  font-weight:  lighter;
+  margin: 0 auto;  
+  background-image: url("../public/banner.webp"); 
+  background-size: cover;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  position: relative;
+  height: 400px;
+  width: 100%; 
+  padding-top: 5%;
+}
+
+.about{
+  position: absolute;
+  margin-top: -50px;
+  margin-bottom: 150px;
+  padding-bottom: 150px;
+}
+
+#AboutContent{
+  margin-top:-50px;
+  padding-top: 100px;
+  padding-left: 250px !important;
+  padding-right: 250px !important;
+  padding-bottom: 50px;
+  background-color: whitesmoke;
+}
+
+#AboutContent span{
+  text-align: justify;
+  font-size: 1.2rem;
+}
+
+
+.banner h1{
+  color: white;
+  text-Align: center;
+  font-Size: 3rem;
+  font-weight: lighter !important;
+}
+
+.bannerText{
+  padding-left: 14%;
+  padding-right: 14%; 
+  height: 100%;
+}
+
+.btnZaloguj{
+  left: 39.5%;
+  right: 0;
+  margin: 0 auto;
+  width: 250px;
+  margin-Top: 50px !important;
+  margin-Bottom: 20px;
+  pointer-events: initial;
+}
+
+.container{
+  color: white;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  padding-bottom: 40px;
+  box-shadow: inset 5em 4em #660066;
+}
+
+.container img{
+  padding-Left: 20%;
+  padding-Top: 20px;
+  width: 60%;
+  pointer-events: none;
+}
+
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20vh);
+  visibility: hidden;
+  transition: opacity 0.6s ease-out, transform 1.2s ease-out;
+  will-change: opacity, visibility;
+}
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+}
+
+.offer{
+  position: absolute;
+  margin: 10px 10px 150px 10px;
+  font-size: 1.2rem;
+  background-color: gray;
+}
+
+@media screen and (max-width: 1200px) {
+  .banner{
+    height:auto;
+    padding-bottom: 20px;
+  }
+  
+  .banner h1{
+    color: white;
+    text-Align: center;
+    font-size: 150% !important;
+  }
+
+  .bannerText{
+    height: auto;
+  }
+
+  .btnZaloguj{
+    display: none !important;
+  }
+
+  .container img{
+    padding-Left: 0;
+    width: 100%;
+  }
+}
+
