@@ -3,10 +3,9 @@ import { Form, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import './loginSite.css';
 import { useNavigate } from 'react-router-dom';
-import { ifLogIn } from '../settings/appSettings';
 
 const LogIn = () => {
-    let [login, setLogin] = useState(ifLogIn);
+    let [login, setLogin] = useState(false);
     let [password, setPassword] = useState('');
     let [alertDiv, setAlertDiv] = useState('');
     const navigate = useNavigate();
@@ -20,7 +19,6 @@ const LogIn = () => {
             setAlertDiv(<div></div>)
             if(login === 'pstawekl' && password === '123'){
                 setLogin(true);
-                console.log(ifLogIn);
                 navigate('/');
             }
         }else{

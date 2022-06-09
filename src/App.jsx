@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import * as React from 'react';
+import React, { useState } from 'react';
 import IndexSite from './pages/homeSite';
 import LogIn from './pages/loginSite';
 import AppBar from '@mui/material/AppBar';
@@ -15,29 +15,9 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import { ifLogIn } from './settings/appSettings';
-
-const [token, setToken] = useState();
-
-const pages = [<a style={{ textDecoration: 'none', color: 'white' }} href="/">Home</a>,
-  <a style={{ textDecoration: 'none', color: 'white' }} onClick={() => document.getElementById('AboutContent').scrollIntoView({ behavior: 'smooth', block: 'center' })}>O nas</a>,
-  <a style={{ textDecoration: 'none', color: 'white' }} onClick={() => document.getElementById('Offer').scrollIntoView({ behavior: 'smooth', block: 'center' })}>Oferta</a>
-  ];
-  var settings = [];
-
-  const navProfStyle = { textDecoration: 'none', color: 'black' };
-  //menu na avatarze
-  if (ifLogIn == false) {
-    settings = [<a href='/logIn' style={navProfStyle}>Zaloguj się</a>,
-    <a href="/registerSite" style={navProfStyle}>Zarejestruj się</a>];
-  }
-  else {
-    settings = [<a href="/profile" style={navProfStyle}>Profil</a>, <a href='/logOut' style={navProfStyle}>Wyloguj się</a>];
-  }
-
-  
 
 export function App() {
+  const [token, setToken] = useState(false);
   //menu
   return (
     <div>
@@ -47,8 +27,25 @@ export function App() {
 }
 
 export function ResponsiveAppBar() {
+  const [token, setToken] = useState(false);
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+
+  const pages = [<a style={{ textDecoration: 'none', color: 'white' }} href="/">Home</a>,
+  <a style={{ textDecoration: 'none', color: 'white' }} onClick={() => document.getElementById('AboutContent').scrollIntoView({ behavior: 'smooth', block: 'center' })}>O nas</a>,
+  <a style={{ textDecoration: 'none', color: 'white' }} onClick={() => document.getElementById('Offer').scrollIntoView({ behavior: 'smooth', block: 'center' })}>Oferta</a>
+  ];
+  var settings = [];
+
+  const navProfStyle = { textDecoration: 'none', color: 'black' };
+  //menu na avatarze
+  if (token == false) {
+    settings = [<a href='/logIn' style={navProfStyle}>Zaloguj się</a>,
+    <a href="/registerSite" style={navProfStyle}>Zarejestruj się</a>];
+  }
+  else {
+    settings = [<a href="/profile" style={navProfStyle}>Profil</a>, <a href='/logOut' style={navProfStyle}>Wyloguj się</a>];
+  }
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
