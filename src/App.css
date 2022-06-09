@@ -41,6 +41,30 @@
   user-select: none;
 }
 
+.about{
+  position: absolute;
+  padding-bottom: 150px !important;
+  width: 100%;
+  height:auto;
+  background-color:  whitesmoke; 
+}
+
+#AboutContent{
+  font-family: 'Roboto';
+  position: static;
+  margin-top: 350px;
+  padding-top: 0;
+  padding-left: 250px !important;
+  padding-right: 250px !important;
+  padding-bottom: 50px;
+  background-color: whitesmoke;
+}
+
+#AboutContent span{
+  text-align: justify;
+  font-size: 1.2rem;
+}
+
 .banner{
   font-family: 'Roboto'; 
   font-weight:  lighter;
@@ -54,28 +78,6 @@
   width: 100%; 
   padding-top: 5%;
 }
-
-.about{
-  position: absolute;
-  margin-top: -50px;
-  margin-bottom: 150px;
-  padding-bottom: 150px;
-}
-
-#AboutContent{
-  margin-top:-50px;
-  padding-top: 100px;
-  padding-left: 250px !important;
-  padding-right: 250px !important;
-  padding-bottom: 50px;
-  background-color: whitesmoke;
-}
-
-#AboutContent span{
-  text-align: justify;
-  font-size: 1.2rem;
-}
-
 
 .banner h1{
   color: white;
@@ -100,12 +102,21 @@
   pointer-events: initial;
 }
 
+.containers{
+  margin-top: -50px;
+}
+
+.containerParent{
+  box-shadow: -0.5rem 0.5rem #4444dd;
+}
+
 .container{
   color: white;
   padding-left: 20px !important;
   padding-right: 20px !important;
   padding-bottom: 40px;
-  box-shadow: inset 5em 4em #660066;
+  min-height: 400px;
+  max-height: 400px;
 }
 
 .container img{
@@ -128,11 +139,94 @@
   visibility: visible;
 }
 
-.offer{
-  position: absolute;
-  margin: 10px 10px 150px 10px;
-  font-size: 1.2rem;
-  background-color: gray;
+.appbar{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  /* display: inline; */
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 80px;
+}
+
+.logInContainer{
+  margin-left:35%;
+  margin-right:35%;
+  padding-top: 3%;
+  padding-bottom: 5%;
+  height: auto;
+  background-color: whitesmoke;
+  font-style: Roboto;
+  font-weight: lighter;
+  color: black;
+  border-radius: 15px;
+}
+
+.logInContent{
+  margin-left: 30%;
+  margin-right: 30%;
+  height: auto;
+}
+
+.logInContent span{
+  float: left;
+}
+
+.logInContent input{
+  float: right;
+  width: 143px; 
+}
+
+.logInButton{
+  border: 0;
+  width:150px !important;
+  height: 30px;
+  Color: white;
+  font-size: 16px;
+  font-weight: lighter;
+  border-radius: 5px;
+}
+
+.logInButton:hover{
+  filter: brightness(50%)
+}
+
+.logInButton:after{
+  filter:brightness(0)
+}
+
+.logInLine{
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.Avatar{
+  margin-top: 15px;
+  float: right; 
+  margin-right: 22%;
+}
+
+.Avatar img{
+  transition: 0.5s;
+}
+
+.Avatar img:hover{
+  filter: brightness(50%);
+}
+
+.Offer{
+  position: static;
+  margin-bottom: 150px;
+  padding-bottom: 150px;
+  padding-top: 0;
+  padding-left: 250px !important;
+  padding-right: 250px !important;
+  padding-bottom: 50px;
+  background: linear-gradient(whitesmoke, #FAF9F6);
+}
+
+.offer h1{
+  font-family: 'Roboto';
+  font-weight: Bolder;
 }
 
 @media screen and (max-width: 1200px) {
@@ -155,9 +249,25 @@
     display: none !important;
   }
 
+  .container h2{
+    font-size: 70%;
+  }
+
+  .container{
+    width:400px;
+  }
+
+  .container span{
+    font-size: 70%;
+  }
+
   .container img{
     padding-Left: 0;
     width: 100%;
   }
-}
 
+  .containerParent{
+    margin-top: 30px;
+    width:400px;
+  }
+}

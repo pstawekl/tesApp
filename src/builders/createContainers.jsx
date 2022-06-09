@@ -9,7 +9,8 @@ export default function SlideToRight(props) {
 
 
     return (
-      <Box sx={{ width: props.boxWidth}}> 
+      <Fade in timeout={2000}>
+        <Box sx={{ width: props.boxWidth}} className="containerParent"> 
         <Box
           ref={containerRef}
           style={{
@@ -19,11 +20,12 @@ export default function SlideToRight(props) {
             overflow: 'hidden',
           }}
         >
-            <Slide direction="right" in={props.checked} container={containerRef.current} timeout={1000}>
+            <Slide direction="left" in={props.checked} container={containerRef.current} timeout={1000}>
             <Box sx={{ width: '100%', height: '100%', bgcolor: props.boxColor }}> <div className="container"> <Fade in={true} timeout={4000}><img id='containerImg' src={props.img} /></Fade> <h2>{props.title}</h2><span>{props.content}</span></div> </Box>
             </Slide>
         </Box>
       </Box>
+      </Fade>
     );
   }
   
