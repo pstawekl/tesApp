@@ -2,6 +2,5 @@ body{
     width: 100%;
     height: 100%;
     background-image: url("../../public/bannerLogIn.webp");
-    font-family: 'Roboto', 'sans-serif';
     font-weight: 1000;
 }

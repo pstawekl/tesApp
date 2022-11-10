@@ -1,8 +1,6 @@
-import logo from './logo.svg';
 import './App.css';
 import React, { useState } from 'react';
 import IndexSite from './pages/homeSite';
-import LogIn from './pages/loginSite';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -15,9 +13,10 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
+import './style.css'
+import { isDownloadVisible } from './pages/homeSite';
 
 export function App() {
-  const [token, setToken] = useState(false);
   //menu
   return (
     <div>
@@ -31,20 +30,26 @@ export function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
-  const pages = [<a style={{ textDecoration: 'none', color: 'white' }} href="/">Home</a>,
-  <a style={{ textDecoration: 'none', color: 'white' }} onClick={() => document.getElementById('AboutContent').scrollIntoView({ behavior: 'smooth', block: 'center' })}>O nas</a>,
-  <a style={{ textDecoration: 'none', color: 'white' }} onClick={() => document.getElementById('Offer').scrollIntoView({ behavior: 'smooth', block: 'center' })}>Oferta</a>
+  const pages = [
+  <a style={{ textDecoration: 'none', color: 'white' }} class='navButton' href="/">Home</a>,
+  <a class='navButton' style={{ textDecoration: 'none', color: 'white' }} onClick={() => document.getElementById('AboutContent').scrollIntoView({ behavior: 'smooth', block: 'center' })}>O nas</a>,
+  <a class='navButton' style={{ textDecoration: 'none', color: 'white' }} onClick={() => document.getElementById('Offer').scrollIntoView({ behavior: 'smooth', block: 'end' })}>Oferta</a>,
   ];
+  
+  if(isDownloadVisible){
+    pages.push(<a class='navButton' style={{ textDecoration: 'none', color: 'white' }} onClick={() => document.getElementById('DownloadApp').scrollIntoView({ behavior: 'smooth', block: 'end' })}>Pobierz</a>)
+  }
+
   var settings = [];
 
   const navProfStyle = { textDecoration: 'none', color: 'black' };
   //menu na avatarze
   if (token == false) {
-    settings = [<a href='/logIn' style={navProfStyle}>Zaloguj się</a>,
-    <a href="/registerSite" style={navProfStyle}>Zarejestruj się</a>];
+    settings = [<a href='/logIn' class='navButton' style={navProfStyle}>Zaloguj się</a>,
+    <a href="/registerSite" class='navButton' style={navProfStyle}>Zarejestruj się</a>];
   }
   else {
-    settings = [<a href="/profile" style={navProfStyle}>Profil</a>, <a href='/logOut' style={navProfStyle}>Wyloguj się</a>];
+    settings = [<a href="/profile" class='navButton' style={navProfStyle}>Profil</a>, <a href='/logOut' class='navButton' style={navProfStyle}>Wyloguj się</a>];
   }
 
   const handleOpenNavMenu = (event) => {
@@ -135,7 +140,7 @@ export function ResponsiveAppBar() {
             ))}
           </Box>
 
-          <Box sx={{ flexGrow: 0 }}>
+          {/* <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar className='Avatar' alt="Avatar" src="https://lnsel.com/wp-content/uploads/2018/12/anon-avatar-300x300.png" />
@@ -163,7 +168,7 @@ export function ResponsiveAppBar() {
                 </MenuItem>
               ))}
             </Menu>
-          </Box>
+          </Box> */}
         </Toolbar>
       </Container>
     </AppBar>
