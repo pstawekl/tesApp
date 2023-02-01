@@ -9,10 +9,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleArrowDown, faCircleArrowUp } from '@fortawesome/free-solid-svg-icons';
 import Fade from '@mui/material/Slide';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../App.css'
+import '../App.css';
+import './style.css';
 
 export const isDownloadVisible = false;
-
 
 const IndexSite = () => {
   return (
@@ -25,6 +25,7 @@ const IndexSite = () => {
       <FadeInSection><AboutContent /></FadeInSection>
       <FadeInSection><Offer /></FadeInSection>
       {isDownloadVisible ? <FadeInSection><DownloadApp /></FadeInSection> : <div></div>}
+      <FadeInSection><MapSection /></FadeInSection>
       <Footer />
     </div>
   )
@@ -225,6 +226,25 @@ const DownloadApp = () => {
             <Button variant='outlined' style={{ marginLeft: '40%' }}>Pobierz</Button>
           </span>
         </Grid>
+      </Grid>
+    </Container>
+  )
+}
+
+const MapSection = () => {
+  return (
+    <Container style={{
+      marginTop: '-20px',
+      maxWidth: 'none',
+      paddingLeft: 0,
+      paddingRight: 0,
+      paddingTop: '50px',
+      paddingBottom: '20px',
+      fontFamily: 'Roboto', fontWeight: 'Bold',
+      backgroundColor: '#616161',
+      color: 'white'
+    }}>
+      <Grid>
       </Grid>
     </Container>
   )

@@ -254,6 +254,21 @@ body {
   font-weight: Bolder;
 }
 
+/* @import "node_modules/ol/ol.css"; */
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
 @media screen and (max-width: 1200px) {
   .banner{
     height:auto;
